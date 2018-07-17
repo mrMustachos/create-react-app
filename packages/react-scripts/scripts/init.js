@@ -99,7 +99,7 @@ module.exports = function(
     command = 'npm';
     args = ['install', '--save', verbose && '--verbose'].filter(e => e);
   }
-  args.push('react', 'react-dom');
+  args.push('react', 'react-dom', 'lodash', 'classnames', 'moment'); // add npm packages HERE!!!!
 
   // Install additional template dependencies, if present
   const templateDependenciesPath = path.join(
@@ -189,6 +189,9 @@ function isReactInstalled(appPackage) {
 
   return (
     typeof dependencies.react !== 'undefined' &&
-    typeof dependencies['react-dom'] !== 'undefined'
+    typeof dependencies['react-dom'] !== 'undefined' &&
+    typeof dependencies['lodash'] !== 'undefined' &&
+    typeof dependencies['classnames'] !== 'undefined' &&
+    typeof dependencies['moment'] !== 'undefined'
   );
 }
